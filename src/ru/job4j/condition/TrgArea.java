@@ -4,9 +4,8 @@ public class TrgArea {
 
     public static double area(double a, double b, double c) {
         // Площадь треугольника по формуле Герона
-        double p = (a+b+c)/2;
-        double rsl = Math.sqrt(p * (p-a)*(p-b)*(p-c));
-        return rsl;
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
     public static void main(String[] args) {
