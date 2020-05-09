@@ -3,20 +3,12 @@ package ru.job4j.calculator;
 public class Fit {
 //    Идеальный вес для мужчин = (рост в сантиметрах – 100) · 1,15.
     public static double manWeight(double height) {
-        if (height > 100) {
-            return (height - 100) * 1.15;
-        } else {
-            return 0;
-        }
+        return (height - 100) * 1.15;
     }
 
 //    Идеальный вес для женщин = (рост в сантиметрах – 110) · 1,15.
     public static double womanWeight(double height) {
-        if (height > 110) {
-            return (height - 110) * 1.15;
-        } else {
-            return 0;
-        }
+        return (height - 110) * 1.15;
     }
 
 
