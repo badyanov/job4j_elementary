@@ -18,16 +18,32 @@ public class Converter {
     }
 
     public static void main(String[] args) {
-        int euro = Converter.rubleToEuro(140);
-        System.out.println("140 rubles are " + euro + " euro.");
+        int in = 140;
+        int expected = 2;
+        int out = Converter.rubleToEuro(in);
+        System.out.println(in + " rubles are " + out + " euro.");
+        boolean passed = expected == out;
+        System.out.println("Test result: " + passed);
 
-        int dollar = Converter.rubleToDollar(115000);
-        System.out.println("115000 rubles are " + dollar + " dollars.");
+        in = 115000;
+        expected = 1916;
+        out = Converter.rubleToDollar(in);
+        System.out.println(in + " rubles are " + out + " dollars.");
+        passed = expected == out;
+        System.out.println("Test result: " + passed);
 
-        int rublesFromEuro = Converter.euroToRuble(500);
-        System.out.println("500 euro are " + rublesFromEuro + " rubles.");
+        in = 500;
+        expected = 35000;
+        out = Converter.euroToRuble(in);
+        System.out.println(in + " euro are " + out + " rubles.");
+        passed = expected == out;
+        System.out.println("Test result: " + passed);
 
-        int rublesFromDollars = Converter.dollarToRuble(3000);
-        System.out.println("3000 dollars are " + rublesFromDollars + " rubles.");
+        in = 3000;
+        expected = 180000;
+        out = Converter.dollarToRuble(in);
+        System.out.println(in + " dollars are " + out + " rubles.");
+        passed = expected == out;
+        System.out.println("Test result: " + passed);
     }
 }
