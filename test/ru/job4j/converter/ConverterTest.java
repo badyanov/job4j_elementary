@@ -60,8 +60,8 @@ public class ConverterTest {
     }
     @Test
     public void whenConvert0dollarThen0Ruble() {
-        int in = 2;
-        int expected = 120;
+        int in = 0;
+        int expected = 0;
         int out = Converter.dollarToRuble(in);
         Assert.assertEquals(expected, out);
     }
