@@ -1,10 +1,8 @@
 package ru.job4j.array;
 
+import java.util.Arrays;
+
 public class ArrayDefinition {
-//    3. Внутри метода main создайте три переменных.
-//            - Массив на 10 элементов типа short с именем ages.
-//            - Массив на 100500 элементов типа String c именем surnames.
-//            - Массив на 40 элементов типа float с именем prices.
 
     public static void main(String[] args) {
 
@@ -12,5 +10,15 @@ public class ArrayDefinition {
         String[] surnames = new String[100500];
         float[] prices = new float[40];
 
+        // ++ #285610
+        String[] names = new String[4];
+        names[0] = "Michelangelo";
+        names[1] = "Donatello";
+        names[2] = "Leonardo";
+        names[3] = "Raphael";
+
+        for (String name:names) {
+            System.out.println(name);
+        }
     }
 }
