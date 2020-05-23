@@ -55,4 +55,18 @@ public class MatrixCheck {
         }
         return rsl;
     }
+
+    /**
+     * 6.7.4. Выигрышные комбинации в сокобан [#285600]
+     */
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        for (int index = 0; index < board.length; index++) {
+            if (board[index][index] == 'X') {
+                result = (monoHorizontal(board, index) || monoVertical(board, index));
+                break;
+            }
+        }
+        return result;
+    }
 }
