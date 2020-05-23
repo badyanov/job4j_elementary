@@ -4,11 +4,9 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * 6.7.1. Моно строка в матрице. [#285607]
- */
 public class MatrixCheckTest {
 
+    // 6.7.1. Моно строка в матрице. [#285607]
     @Test
     public void whenHasLine1MonoHorizontal() {
         char[][] input = {
@@ -50,6 +48,51 @@ public class MatrixCheckTest {
                 {'X', 'X', 'X'},
         };
         boolean result = MatrixCheck.monoHorizontal(input, 4);
+        assertThat(result, is(false));
+    }
+
+    // 6.7.2. Моно столбец в матрице. [#285608]
+    @Test
+    public void whenHasMonoLine2Vertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 2);
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenHasMonoLine0Vertical() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {'X', ' ', ' '},
+                {'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 0);
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenHasNoMonoLine0Vertical() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', ' ', ' '},
+                {'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 0);
+        assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenHasOutOfRangeMonoVertical() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', ' ', ' '},
+                {'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.monoVertical(input, 3);
         assertThat(result, is(false));
     }
 }
