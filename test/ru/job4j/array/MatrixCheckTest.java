@@ -1,6 +1,7 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -94,5 +95,32 @@ public class MatrixCheckTest {
         };
         boolean result = MatrixCheck.monoVertical(input, 3);
         assertThat(result, is(false));
+    }
+
+    //    6.7.3. Массив из диагонали матрицы. [#285609]
+    @Test
+    public void whenDiagonal() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', 'X', ' '},
+                {' ', ' ', 'X'},
+        };
+        char[] result = MatrixCheck.extractDiagonal(input);
+        char[] expect = {'X', 'X', 'X'};
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenDiagonal2() {
+        char[][] input = {
+                {'a', 'b', 'c', 'd', 'e'},
+                {'f', 'g', 'h', 'i', 'j'},
+                {'k', 'l', 'm', 'n', 'o'},
+                {'p', 'q', 'r', 's', 't'},
+                {'u', 'v', 'w', 'x', 'y'},
+        };
+        char[] result = MatrixCheck.extractDiagonal(input);
+        char[] expect = {'a', 'g', 'm', 's', 'y'};
+        assertThat(result, is(expect));
     }
 }

@@ -45,5 +45,14 @@ public class MatrixCheck {
         return result;
     }
 
-
+    /**
+     * 6.7.3. Массив из диагонали матрицы. [#285609]
+     */
+    public static char[] extractDiagonal(char[][] board) {
+        char[] rsl = new char[board.length];
+        for (int i = 0; i < board.length; i++) {
+            rsl[i] = board[i][i];
+        }
+        return rsl;
+    }
 }
