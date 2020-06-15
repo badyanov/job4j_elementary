@@ -41,17 +41,6 @@ public class MatrixCheckTest {
         assertThat(result, is(false));
     }
 
-    @Test
-    public void whenHasNoLineOutOfRangeMonoHorizontal() {
-        char[][] input = {
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
-                {'X', 'X', 'X'},
-        };
-        boolean result = MatrixCheck.monoHorizontal(input, 4);
-        assertThat(result, is(false));
-    }
-
     // 6.7.2. Моно столбец в матрице. [#285608]
     @Test
     public void whenHasMonoLine2Vertical() {
@@ -83,17 +72,6 @@ public class MatrixCheckTest {
                 {'X', ' ', ' '},
         };
         boolean result = MatrixCheck.monoVertical(input, 0);
-        assertThat(result, is(false));
-    }
-
-    @Test
-    public void whenHasOutOfRangeMonoVertical() {
-        char[][] input = {
-                {'X', ' ', ' '},
-                {' ', ' ', ' '},
-                {'X', ' ', ' '},
-        };
-        boolean result = MatrixCheck.monoVertical(input, 3);
         assertThat(result, is(false));
     }
 
