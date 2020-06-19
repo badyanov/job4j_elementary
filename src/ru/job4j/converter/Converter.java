@@ -11,6 +11,7 @@ public class Converter {
      * Курс Евро
      */
     final static int EUR = 70;
+
     /**
      * Курс доллара
      */

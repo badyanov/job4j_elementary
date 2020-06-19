@@ -6,14 +6,11 @@ package ru.job4j.array;
 public class BarleyBreak {
     public static void main(String[] args) {
         int[][] table = new int[3][3];
-
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
-                // К каждому значению во 2 строке прибавляется 3; в 3 строке - 6
                 table[y][x] = (x + 1) + (y * 3);
             }
         }
-
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
                 System.out.print(table[y][x] + "\t");

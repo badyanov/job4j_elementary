@@ -1,9 +1,11 @@
 package ru.job4j.condition;
 
+/**
+ * Площадь треугольника по формуле Герона
+ * @author d.badyanov@outlook.com
+ */
 public class TrgArea {
-
     public static double area(double a, double b, double c) {
-        // Площадь треугольника по формуле Герона
         double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }

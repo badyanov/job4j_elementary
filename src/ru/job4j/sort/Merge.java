@@ -4,17 +4,19 @@ import java.util.Arrays;
 
 /**
  * Объединить два массива [#124482]
+ * Сначала проходим оба массива и заполняем наименьшее из двух значений в новый массив
+ * сдвигая при этом указатель на текущий элемент массива.
+ *
+ * После того, как указатель одного из массивов дошел до последнего элемента,
+ * нужно дозаполнить результирующий массив из второго
+ * @author d.badyanov@outlook.com
  */
 public class Merge {
-
     public int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
         int indexLeft = 0;
         int indexRight = 0;
         int i = 0;
-
-        // Сначала проходим оба массива и заполняем наименьшее из двух значений в новый массив
-        // сдвигая при этом указатель на текущий элемент массива
         while (indexLeft < left.length && indexRight < right.length) {
             int buf = 0;
             if (left[indexLeft] < right[indexRight]) {
@@ -27,15 +29,11 @@ public class Merge {
             rsl[i] = buf;
             i++;
         }
-
-        // После того, как указатель одного из массивов дошел до последнего элемента,
-        // нужно дозаполнить результирующий массив из второго
         if (indexLeft == left.length) {
             fillArray(rsl, right, i, indexRight);
         } else {
             fillArray(rsl, left, i, indexLeft);
         }
-
         return rsl;
     }
 

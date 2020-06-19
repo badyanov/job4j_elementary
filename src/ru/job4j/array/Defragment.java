@@ -2,23 +2,20 @@ package ru.job4j.array;
 
 /**
  * 6.8. Дефрагментация массива. [#285617]
+ * point - указатель на null ячейку.
  */
 public class Defragment {
-
     public static String[] compress(String[] array) {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
-                int point = index; /* указатель на null ячейку. */
-                /* переместить первую не null ячейку. Нужен цикл. */
+                int point = index;
                 for (int newIndex = point + 1; newIndex < array.length; newIndex++) {
                     if (array[newIndex] != null) {
-                        /* поменять ячейки местами */
                         swap(array, point, newIndex);
                         break;
                     }
                 }
             }
-            //System.out.print(array[index] + " ");
         }
         return array;
     }

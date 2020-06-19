@@ -1,12 +1,13 @@
 package ru.job4j.condition;
 
+/**
+ * формулы:
+ * h = p / (2 * (k + 1));
+ * L = h * k;
+ * s = L * h;
+ */
 public class SqArea {
-
     public static double square(int p, int k) {
-//        формулы:
-//        h = p / (2 * (k + 1));
-//        L = h * k;
-//        s = L * h;
         double h = (double) p / (2 * (k + 1));
         return (h * k) * h;
     }

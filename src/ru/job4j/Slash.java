@@ -1,11 +1,15 @@
 package ru.job4j;
 
+/**
+ * рисует букву "Х" в псевдографике
+ * @author d.badyanov@outlook.com
+ */
 public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
                 boolean left = row == cell;
-                boolean right = ((size - 1) - cell) == row; // для size == 5 индекс крайней ячейки будет равен 4
+                boolean right = ((size - 1) - cell) == row;
                 if (left) {
                     System.out.print("0");
                 } else if (right) {
