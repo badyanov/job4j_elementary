@@ -25,18 +25,18 @@ public class Triangle {
         double ac = first.distance(third);
         double bc = second.distance(third);
         if (this.exist(ab, ac, bc)) {
-            double p = period(ab, ac, bc) / 2;
+            double p = halfPerimetr(ab, ac, bc);
             rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }
 
     /**
-     * Вычисление периметра треугольника по длинам сторон
-     * @return периметр
+     * Вычисление полу-периметра треугольника по длинам сторон
+     * @return полупериметр
      */
-    public double period(double ab, double ac, double bc) {
-        return ab + ac + bc;
+    public double halfPerimetr(double ab, double ac, double bc) {
+        return (ab + ac + bc) / 2;
     }
 
     /**
