@@ -29,4 +29,30 @@ public class MaxTest {
         int result = Max.max(-5, 0);
         assertThat(result, is(0));
     }
+
+    // 3. Перегрузить метод max для трех чисел [#285762]
+    @Test
+    public void when1And2And3Then3() {
+        int result = Max.max(1, 2, 3);
+        assertThat(result, is(3));
+    }
+
+    @Test
+    public void when1And3And2Then3() {
+        int result = Max.max(1, 3, 2);
+        assertThat(result, is(3));
+    }
+
+    // 3. Перегрузить метод max для четырех чисел [#285762]
+    @Test
+    public void when1And2And3And4Then4() {
+        int result = Max.max(1, 2, 3, 4);
+        assertThat(result, is(4));
+    }
+
+    @Test
+    public void when1And2And4And3Then4() {
+        int result = Max.max(1, 2, 4, 3);
+        assertThat(result, is(4));
+    }
 }
